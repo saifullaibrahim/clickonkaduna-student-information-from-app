@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      clickonkadunastudents
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-button expand="block" (click)="openModal()" color="success">Add students information</ion-button>
+      <ion-list>
+        <ion-item color="success">
+          <ion-label>name</ion-label>
+          <ion-label>email</ion-label>
+          <ion-label>phone</ion-label>
+          <ion-label>stream</ion-label>          
+          <ion-label>gender</ion-label>
+          <ion-label>about</ion-label>
+          <ion-label>experience</ion-label>
+        </ion-item>
+        <ion-item *ngFor="let student of students">
+          <ion-label>{{student.name}}</ion-label>
+          <ion-label>{{student.email}}</ion-label>
+          <ion-label>{{student.phone}}</ion-label>
+          <ion-label>{{student.stream}}</ion-label>          
+          <ion-label>{{student.gender}}</ion-label>
+          <ion-label>{{student.about}}</ion-label>
+          <ion-label>{{student.experience}}</ion-label>
+            <ion-label>
+              <ion-button  (click)="edit(student.id)" color="success">Edit</ion-button>
+              <ion-button  (click)="delete(student.id)" color="danger">Delete</ion-button>
+            </ion-label>  
+        </ion-item>
+       
+      </ion-list>
+  </div>
+</ion-content>

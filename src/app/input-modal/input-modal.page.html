@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>fill the information from</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content paddind class="ion-padding">
+  <ion-item>
+      <ion-label position="stacked">Full Name <ion-text color="danger">*</ion-text></ion-label>
+    <ion-input required type="text"  [(ngModel)]="user.name"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label position="stacked">email <ion-text color="danger">*</ion-text></ion-label>
+    <ion-input required type="text"  [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label position="stacked">phone <ion-text color="danger">*</ion-text></ion-label>
+    <ion-input required type="text"  [(ngModel)]="user.phone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label  position="stacked">stream <ion-text color="danger">*</ion-text></ion-label>
+    <ion-select interface="popover" [(ngModel)]="user.stream">
+      <ion-select-option value="prog and tech">programme and tech</ion-select-option>
+      <ion-select-option value="dig maketing">dig maketing</ion-select-option>
+     
+    </ion-select>
+  </ion-item>
+  <ion-item>
+      <ion-label  position="stacked"> gender <ion-text color="danger">*</ion-text></ion-label>
+    <ion-select interface="popover"  [(ngModel)]="user.gender">
+      <ion-select-option value="male">male</ion-select-option>
+      <ion-select-option value=">female">>female</ion-select-option>
+     
+    </ion-select>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="stacked" >about  <ion-text color="danger">*</ion-text></ion-label>
+    <ion-textarea [(ngModel)]="user.about"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">experience  <ion-text color="danger">*</ion-text></ion-label>
+    <ion-textarea [(ngModel)]="user.experience"></ion-textarea>
+  </ion-item>
+                
+                  <ion-button expand="block"  color="success" *ngIf="!userID" (click)="save()">Add information</ion-button>
+                  <ion-button expand="block"  color="success" *ngIf="userID" (click)="update()">update</ion-button>
+                  <ion-button expand="block"  color="danger" (click)="closeModal()">refresh</ion-button>
+                
+            
+        
+
+
+</ion-content>
